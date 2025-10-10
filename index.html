@@ -173,10 +173,6 @@
             height: 50px;
             line-height: 50px;
             font-size: 1.1rem;
-            display: block;
-            width: 250px;
-            margin: 0;
-            text-align: center;
         }
         
         /* Основные секции */
@@ -271,46 +267,60 @@
         }
 
         /* Адаптивность */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
 
-            .nav-menu.active {
-                display: flex;
-            }
+    .nav-menu.active {
+        display: flex;
+    }
 
-            .mobile-menu-btn {
-                display: block;
-            }
+    .mobile-menu-btn {
+        display: block;
+    }
 
-            .intro-content h2 {
-                font-size: 2rem;
-            }
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
+    }
 
-            .intro-content h4 {
-                font-size: 1.2rem;
-            }
+    .intro-content h2 {
+        font-size: 2rem;
+    }
 
-            .intro-buttons .btn {
-                display: block;
-                width: 200px;
-                margin: 10px auto;
-            }
+    .intro-content h4 {
+        font-size: 1.2rem;
+    }
 
-            .contact-item {
-                min-width: 150px;
-                padding: 20px 15px;
-            }
-        }
+    .intro-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .intro-buttons .btn {
+        display: block;
+        width: 250px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .contact-item {
+        min-width: 150px;
+        padding: 20px 15px;
+    }
+}
 
         @media (max-width: 480px) {
             .intro-content h2 {
