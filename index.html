@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- Базовые настройки -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Подключение стилей -->
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Open Graph-->
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Алиса Булгакова | Junior Аналитик данных">
+    <meta property="og:description" content="Junior Аналитик данных | Ищу работу">
+    <meta property="og:url" content="https://alisa-bul.github.io/">
+    <meta property="og:site_name" content="Алиса Булгакова | Junior Аналитик данных">
+    <meta property="og:image" content="https://alisa-bul.github.io/assets/images/preview.jpg">
+
+    <!-- Базовые мета-теги -->
+    <meta name="author" content="Алиса Булгакова">
+    <meta name="description" content="Junior Аналитик данных | Ищу работу">
+    <meta name="robots" content="index, follow">
+
+    <!-- Цвет темы -->
+    <meta name="theme-color" content="#F43182">
+
+    <!-- Заголовок страницы -->
+    <title>Алиса Булгакова | Junior Аналитик данных</title>
+
+    <style>
+        /* Настройка стилей */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Верхняя навигация */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #F43182;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: #F43182;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #F43182;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #F43182;
+            cursor: pointer;
+        }
+
+        /* Стиль для круглой фотографии */
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            margin: 0 auto 2rem auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Стиль для стикера */
+        .inline-icon {
+            height: 1.2em;
+            vertical-align: middle;
+            horiz-align: left;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        main {
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+        }
+
+        /* Главная секция */
+        #intro {
+            background: linear-gradient(135deg, #2196F3 0%, #F43182 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .intro-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .intro-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            min-height: 60px;
+        }
+
+        .intro-content h5 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .intro-buttons {
+            margin-top: 2rem;
+        }
+
+        .intro-buttons .btn {
+            margin: 0 10px;
+            padding: 0 30px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Основные секции */
+        .section {
+            padding: 80px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px 0;
+        }
+
+        /* Карточки проектов */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content {
+            flex-grow: 1;
+        }
+
+        .card-action {
+            margin-top: auto;
+        }
+
+        /* Навыки */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 16px;
+            height: 36px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 18px;
+            background-color: pink;
+            color: indigo;
+            border: 1px solid indigo;
+        }
+
+        /* Контакты */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            min-width: 200px;
+            border-radius: 10px;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            margin-bottom: 15px;
+            font-size: 48px;
+            color: #F43182;
+        }
+
+        .contact-text {
+            margin: 0;
+            text-align: center;
+        }
+
+        .contact-text a {
+            color: #F43182;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-text a:hover {
+            color: #F43182;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .intro-content h2 {
+                font-size: 2rem;
+            }
+
+            .intro-content h4 {
+                font-size: 1.2rem;
+            }
+
+            .intro-buttons .btn {
+                display: block;
+                width: 200px;
+                margin: 10px auto;
+            }
+
+            .contact-item {
+                min-width: 150px;
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-item {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* Дополнительные стили */
+        .flow-text {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .browser-default {
+            padding-left: 20px;
+        }
+
+        .browser-default li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        /* Стили для секции образования */
+        .education-item {
+            margin: 15px 0;
+        }
+
+        .education-item p {
+            margin: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .education-item i {
+            margin-right: 8px;
+            margin-top: 2px;
+        }
+
+        .education-category {
+            margin: 20px 0;
+        }
+
+        .education-category h6 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .education-category h6 i {
+            margin-right: 8px;
+        }
+
+        .education-list {
+            margin-left: 10px;
+        }
+
+        .education-entry {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid purple;
+        }
+
+        .education-year {
+            float: right;
+            color: #666;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .education-source {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Адаптивность для секции образования */
+        @media (max-width: 768px) {
+            .education-entry {
+                padding: 10px;
+            }
+
+            .education-year {
+                float: none;
+                display: block;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Навигация -->
+<nav class="main-nav">
+    <div class="nav-content">
+        <a href="#intro" class="nav-logo">
+            <i class="material-icons">home</i>
+        </a>
+
+        <button class="mobile-menu-btn">
+            <i class="material-icons">menu</i>
+        </button>
+
+        <ul class="nav-menu">
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#education">Образование</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Первая секция: Главный экран -->
+    <section id="intro" class="section">
+        <div class="container">
+            <div class="intro-content">
+                <!-- Аватарка -->
+                <img src="assets/img/my-photo.jpg" alt="Фото" class="profile-photo">
+                <h2>Привет, меня зовут <span style="color: #fff">Алиса Булгакова!</span>
+                    <img src="assets/img/hello.png" alt="Иконка" class="inline-icon">
+                </h2>
+                <h4>
+                    <span class="typing" style="font-weight: 300;"></span>
+                </h4>
+                <h5>Я начинающий аналитик данных. Ищу работу, на которой смогу совершенствовать свои навыки под руководством опытных наставников.</h5>
+                <p>Проживаю в г. Новосибирске.</p>
+                <p>Предпочитаю <u>удаленный</u> формат работы.</p>
+
+                <div class="intro-buttons">
+                    <a href="#about" class="btn-large waves-effect waves-light blue">Узнать больше</a>
+                    <a href="#contact" class="btn-large waves-effect waves-light white blue-text">Написать мне</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Вторая секция: Обо мне -->
+    <section id="about" class="section">
+        <h3 class="page-title white-text pink">Обо мне</h3>
+        <div class="container flow-text">
+            <p>Я только начинаю свой путь в IT! Ранее работала аналитиком данных в сфере управления системой общего образования на региональном уровне (2 года, 9 месяцев). Имею опыт разработки систем показателей и методик для проведения мониторингов, обработки данных (Excel, Statistica), формирования аналитических отчетов, сборников и дашбордов в сжатые сроки.</p>
+
+            <p>Для изучения актуальных методов работы с данными я прошла курс "Аналитик данных" от школы KARPOV.COURSES. Сейчас самостоятельно продолжаю изучение:</p>
+
+            <ul class="browser-default">
+                <li>Python</li>
+                <li>Библиотек для анализа данных и визуализации (Pandas, Numpy, SciPy, Statsmodels, Pingouin, Matplotlib, Plotly, Seaborn)</li>
+                <li>SQL</li>
+                <li>Инструментов для визуализации данных (DataLens, Power BI, Redash, Tableau)</li>
+                <li>Git</li>
+                <li>Apache Airflow</li>
+                <li>Статистика и A/B-тесты</li>
+                <li>Финансовые показатели и продуктовые метрики</li>
+            </ul>
+
+            <p>Я открыта к изучению новой информации, готова выкладываться на все 100%. К решению рабочих задач подхожу с энтузиазмом и всегда стараюсь довести дело до конца. Меня не пугают рутинные задачи, ведь даже в них есть место творчеству.</p>
+
+            <p>Так, например, на предыдущем месте работы по результатам мониторинга для каждого муниципалитета региона ежегодно вручную формировались аналитические отчеты в Word (около 30 страниц). Это была монотонная работа, занимающая много времени. Я проявила инициативу и спроектировала дашборд, который значительно ускорил процесс. На выходе мы получили симпатичную и компактную визуализацию, наглядно демонстрирующую позитивные моменты и недочеты в работе муниципальных систем.</p>
+
+            <p>Также, благодаря совместным усилиям нашей команды в периоды проведения государственной итоговой аттестации (ГИА), готовности ответственных сотрудников работать в полную силу даже в выходные дни, наш региональный центр обработки информации два года подряд становился лидером в общероссийском рейтинге.</p>
+        </div>
+    </section>
+
+    <!-- Третья секция: Проекты -->
+    <section id="projects" class="section">
+        <h3 class="page-title white-text blue">Проекты</h3>
+        <div class="container">
+            <div class="flow-text">
+                <p>Здесь представлены мои учебные проекты.</p>
+            </div>
+
+            <div class="row">
+                <!-- Проект 1 -->
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title pink-text">Учебный проект "Образовательная платформа"</span>
+                            <p>Это мой финальный проект по результатам прохождения курса "Аналитик данных". В рамках проекта необходимо было выполнить три задания:</p>
+                            <ul class="browser-default">
+                                <li>Провести <strong>A/B-тестирование</strong> новой механики оплаты услуг на сайте образовательной платформы, сформулировать выводы</li>
+                                <li>Написать два <strong>SQL-запроса</strong>:
+                                    <ul>
+                                        <li>1) информация о количестве очень усердных студентов;</li>
+                                        <li>2) выгрузка таблицы с рассчитанными метриками для контрольной и тестовой групп: ARPU, ARPAU, CR в покупку, CR активного пользователя в покупку, CR пользователя из активности по математике в покупку курса по математике.</li>
+                                    </ul>
+                                </li>
+                                <li>Написать функции в <strong>Python</strong>:
+                                    <ul>
+                                        <li>1) пересчет метрик по результатам A/B-теста с учетом новых данных;</li>
+                                        <li>2) построение графиков по получаемым метрикам.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://github.com/alisa-bul/Training_project_educational_platform" target="_blank" class="waves-effect waves-light btn pink">
+                                <i class="fab fa-github left"></i>
+                                Ссылка на проект
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Проект 2 -->
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title pink-text">Учебный проект по модулю "Продуктовая аналитика"</span>
+                            <p>Проект по анализу данных для стартапа - маркетплейса, который на рынке недавно и занимается продажей новых товаров из Бразилии.</p>
+                            <p>В данном проекте выполнены следующие задачи:</p>
+                            <ul class="browser-default">
+                                <li>Расчет месячного <strong>retention</strong> с помощью <strong>когортного анализа</strong></li>
+                                <li>Оценка <strong>product/market fit</strong></li>
+                                <li>Выбор и анализ динамики <strong>продуктовых метрик</strong></li>
+                                <li>Использование <strong>фреймворка ICE</strong> для приоритизации гипотез</li>
+                                <li>Составление <strong>аналитического отчета</strong> по результатам работы</li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://github.com/alisa-bul/Product_analytics" target="_blank" class="waves-effect waves-light btn pink">
+                                <i class="fab fa-github left"></i>
+                                Ссылка на проект
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Навыки -->
+    <section id="skills" class="section">
+        <h3 class="page-title white-text indigo">Навыки</h3>
+        <div class="container">
+            <!-- Языки программирования -->
+            <div class="card">
+                <div class="card-content">
+                        <span class="card-title indigo-text">
+                            <i class="material-icons left">code</i>
+                            Языки программирования
+                        </span>
+                    <div class="chips">
+                        <div class="chip">Python</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Science библиотеки -->
+            <div class="card">
+                <div class="card-content">
+                        <span class="card-title indigo-text">
+                            <i class="material-icons left">functions</i>
+                            Data Science библиотеки
+                        </span>
+                    <div class="chips">
+                        <div class="chip">Pandas</div>
+                        <div class="chip">NumPy</div>
+                        <div class="chip">SciPy</div>
+                        <div class="chip">Statsmodels</div>
+                        <div class="chip">Pingouin</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Визуализация данных -->
+            <div class="card">
+                <div class="card-content">
+                        <span class="card-title indigo-text">
+                            <i class="material-icons left">bar_chart</i>
+                            Визуализация данных
+                        </span>
+                    <div class="chips">
+                        <div class="chip">Matplotlib</div>
+                        <div class="chip">Plotly</div>
+                        <div class="chip">Seaborn</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Базы данных и BI -->
+            <div class="card">
+                <div class="card-content">
+                        <span class="card-title indigo-text">
+                            <i class="material-icons left">storage</i>
+                            Базы данных и BI-системы
+                        </span>
+                    <div class="chips">
+                        <div class="chip">PostgreSQL</div>
+                        <div class="chip">DataLens</div>
+                        <div class="chip">Power BI</div>
+                        <div class="chip">Excel</div>
+                        <div class="chip">StatSoft</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Инструменты -->
+            <div class="card">
+                <div class="card-content">
+                        <span class="card-title indigo-text">
+                            <i class="material-icons left">build</i>
+                            Инструменты
+                        </span>
+                    <div class="chips">
+                        <div class="chip">Jupyter Notebook</div>
+                        <div class="chip">Git</div>
+                        <div class="chip">Apache Airflow</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Образование -->
+    <section id="education" class="section">
+        <h3 class="page-title white-text purple">Образование</h3>
+        <div class="container">
+            <div class="row">
+                <!-- Университет -->
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title pink-text">Новосибирский государственный университет экономики и управления "НИНХ" (НГУЭУ)</span>
+
+                            <div class="education-item">
+                                <p><i class="material-icons tiny">location_on</i> Новосибирск, Россия</p>
+                                <p><i class="material-icons tiny">school</i> Бакалавр по направлению "Экономика", профилю "Бизнес-статистика и аналитика"</p>
+                                <p><i class="material-icons tiny">date_range</i> 2018-2022 гг.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Курсы -->
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title pink-text">Дополнительное образование</span>
+
+                            <div class="education-category">
+                                <h6><i class="material-icons tiny">computer</i> Онлайн-платформы</h6>
+                                <div class="education-list">
+                                    <div class="education-entry">
+                                        <strong>Аналитик данных</strong>
+                                        <span class="education-year">2025</span>
+                                        <div class="education-source">KARPOV.COURSES</div>
+                                    </div>
+                                    <div class="education-entry">
+                                        <strong>Симулятор SQL</strong>
+                                        <span class="education-year">2025</span>
+                                        <div class="education-source">KARPOV.COURSES</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="divider" style="margin: 20px 0;"></div>
+
+                            <div class="education-category">
+                                <h6><i class="material-icons tiny">workspace_premium</i> Курсы повышения квалификации</h6>
+                                <div class="education-list">
+                                    <div class="education-entry">
+                                        <strong>Управление общеобразовательной организацией на основе использования результатов мониторинговых исследований и оценочных процедур</strong>
+                                        <span class="education-year">2024</span>
+                                        <div class="education-source">ГКУ НСО НИМРО • 36 часов</div>
+                                    </div>
+                                    <div class="education-entry">
+                                        <strong>Использование результатов мониторинговых исследований и оценочных процедур в управлении муниципальной системой образования</strong>
+                                        <span class="education-year">2023</span>
+                                        <div class="education-source">ГКУ НСО НИМРО • 36 часов</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Контакты -->
+    <section id="contact" class="section">
+        <h3 class="page-title white-text pink">Контакты</h3>
+        <div class="container center-align">
+            <div class="contact-icons">
+                <div class="contact-item">
+                    <i class="material-icons large">email</i>
+                    <p class="contact-text"><a href="mailto:raetkayalisa@yandex.ru">raetkayalisa@yandex.ru</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram large"></i>
+                    <p class="contact-text"><a href="https://t.me/anova_lm" target="_blank">@anova_lm</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github large"></i>
+                    <p class="contact-text"><a href="https://github.com/alisa-bul" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- Инициализация скриптов -->
+<script>
+    // Инициализация Materialize компонентов
+    document.addEventListener('DOMContentLoaded', function() {
+        // Прокрутка к секциям
+        $('.scrollspy').scrollSpy();
+
+        // Мобильное меню
+        $('.mobile-menu-btn').click(function() {
+            $('.nav-menu').toggleClass('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        $('.nav-menu a').click(function() {
+            $('.nav-menu').removeClass('active');
+        });
+    });
+
+    // Инициализация typed.js для анимации текста
+    var typed = new Typed('.typing', {
+        strings: ["Аналитик данных", "Продуктовый аналитик", "BI-аналитик"],
+        loop: true,
+        typeSpeed: 80,
+        backSpeed: 40,
+        backDelay: 2000
+    });
+</script>
+
+</body>
+</html>
